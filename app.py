@@ -8,6 +8,16 @@ st.set_page_config(
     layout="centered"
 )
 
+# CSS personalizado para reducir el ancho de la sidebar
+st.markdown("""
+    <style>
+    [data-testid="stSidebar"] {
+        min-width: 0px;
+        max-width: 200px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # Inicializar el estado de la sesión
 if 'operacion' not in st.session_state:
     st.session_state.operacion = None
